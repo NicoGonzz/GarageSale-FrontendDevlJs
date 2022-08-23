@@ -3,12 +3,15 @@ const desktopMenu=document.querySelector('.desktop-menu');
 const menuBurguerIcono=document.querySelector('.menu');
 const mobileMenu=document.querySelector('.mobile-menu');
 const menuCarIcon=document.querySelector('.navbar-shopping-cart');
+const productDetailCloseIcon=document.querySelector('.product-detail-close');
 const shoppingCartContainer=document.querySelector('#shoppingCartContainer');
+const productDetailContainer=document.querySelector('#productDetail');
 const cardsContainer=document.querySelector('.cards-container');
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 menuBurguerIcono.addEventListener('click',togglemobileMenu);
 menuCarIcon.addEventListener('click',toggleCarritoAside);
+productDetailCloseIcon.addEventListener('click',closeProductDetailAside);
 
 function toggleDesktopMenu(){
     desktopMenu.classList.toggle('inactive');
@@ -21,6 +24,8 @@ function togglemobileMenu(){
             shoppingCartContainer.classList.add('inactive');
         }
 
+        closeProductDetailAside();
+
     mobileMenu.classList.toggle('inactive');
 }
 
@@ -31,14 +36,32 @@ function toggleCarritoAside(){
        {  
          mobileMenu.classList.add('inactive');//si el menu esta abierto se cierra
        }     
+
+       const isProductDetailClosed = productDetailContainer.classList.contains('inactive');
+
+       if(!isProductDetailClosed)
+       {  
+        productDetailContainer.classList.add('inactive');//si el menu esta abierto se cierra
+       } 
+
        shoppingCartContainer.classList.toggle('inactive');
+}
+
+function openProductDetailAside(){
+    shoppingCartContainer.classList.add('inactive');
+    productDetailContainer.classList.remove('inactive');
+
+}
+
+function closeProductDetailAside(){
+    productDetailContainer.classList.add('inactive');
 }
 
 const productList =[];
 productList.push({
-    name: 'Peluche',
-    price: 140,
-    image: "https://images.pexels.com/photos/860882/pexels-photo-860882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    name: 'Oso',
+    price: 20,
+    image: "https://images.pexels.com/photos/5786759/pexels-photo-5786759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 });
 productList.push ({
     name:'Bicycle helmet',
@@ -104,6 +127,7 @@ for (product of arr){
     //product ={name,price,image}
     const productImg=document.createElement('img');
     productImg.setAttribute('src',product.image);
+    productImg.addEventListener('click', openProductDetailAside)
     
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
