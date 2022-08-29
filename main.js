@@ -64,9 +64,14 @@ productList.push({
     image: "https://images.pexels.com/photos/5786759/pexels-photo-5786759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 });
 productList.push ({
-    name:'Bicycle helmet',
-    price: 1200,
-    image: 'https://assets.specialized.com/i/specialized/60821-104_HLMT_ALIGN-II-HLMT-MIPS-CE-BLK-BLKREFL-S-M_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto'
+    name:'Oso Navideño',
+    price: 80,
+    image: 'https://images.pexels.com/photos/1800252/pexels-photo-1800252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+});
+productList.push ({
+    name:'Oso Gigante',
+    price: 120,
+    image: 'https://images.pexels.com/photos/5719233/pexels-photo-5719233.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
 });
 productList.push ({
     name:'Bicycle helmet',
